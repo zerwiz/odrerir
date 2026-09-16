@@ -1,0 +1,7 @@
+{"message":"Missing pages directory: src/pages","label":null,"level":"warn"}
+{"message":"connected.","label":"vite","level":"info"}
+{"message":"Generated 1ms","label":"types","level":"info"}
+{"message":"connected.","label":"vite","level":"info"}
+{"message":"Re-optimizing dependencies because vite config has changed","label":"vite","level":"info"}
+{"message":" astro  v7.3.2 ready in 1652 ms\n┃ Local    http://localhost:4322/\n┃ Network  http://192.168.68.110:4322/\n           http://100.100.93.103:4322/\n           http://172.20.0.1:4322/\n           http://172.17.0.1:4322/","label":"SKIP_FORMAT","level":"info"}
+{"message":"watching for file changes...","label":null,"level":"info"}

@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-09-15T10:35:19Z",
+  "realm": "wayof",
+  "tally": {
+    "runes": 50,
+    "projects": 2,
+    "loom": 4,
+    "wake": 0,
+    "smiths": 0
+  },
+  "errands_armed": [],
+  "smiths": [],
+  "ledger": {
+    "underway": [],
+    "landed": [],
+    "charted": [
+      "ymir-platform",
+      "hlidskjalf"
+    ]
+  }
+}

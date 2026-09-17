@@ -1,14 +1,15 @@
 {
   "name": "@zerwiz/odrerir",
   "type": "module",
-  "version": "0.1.1",
-  "description": "Óðrerir — the Ymir fleet's board on its own deck: the landing's carved cloth, the board's machinery, read-only.",
+  "version": "0.1.2",
+  "description": "\u00d3\u00f0rerir \u2014 the Ymir fleet's board on its own deck: the landing's carved cloth, the board's machinery, read-only.",
   "main": "electron/main.cjs",
   "scripts": {
     "check:cloth": "node scripts/extract-cloth.mjs --check",
     "dev": "npm run check:cloth && astro dev",
     "build": "npm run check:cloth && astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "astro": "latest"
@@ -19,5 +20,8 @@
     "README.md",
     "LICENSE",
     "NOTICE"
-  ]
+  ],
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
 }

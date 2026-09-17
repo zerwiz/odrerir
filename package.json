@@ -1,8 +1,7 @@
 {
-  "name": "ymir-odrerir",
+  "name": "@zerwiz/odrerir",
   "type": "module",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.1",
   "description": "Óðrerir — the Ymir fleet's board on its own deck: the landing's carved cloth, the board's machinery, read-only.",
   "main": "electron/main.cjs",
   "scripts": {
@@ -13,5 +12,12 @@
   },
   "dependencies": {
     "astro": "latest"
-  }
+  },
+  "files": [
+    "dist",
+    "electron",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ]
 }

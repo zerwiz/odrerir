@@ -1,7 +1,8 @@
 // Óðrerir — Electron shell. The Live Hall as a desktop app.
 //
-// Raises the hall (the Astro board on :4322) if it is down, then opens it in
-// its own native window. The board stays the UI; this is the window around it.
+// Raises the hall (the Hlidskjalf-type board on :4322 — React since plan 55,
+// 2026-09-24) if it is down, then opens it in its own native window. The board
+// stays the UI; this is the window around it.
 // One app identity of its own, so it never stacks with Hlidskjalf or Smíðja.
 const { app, BrowserWindow, Menu, shell, screen } = require('electron');
 const { spawn } = require('node:child_process');
@@ -9,13 +10,32 @@ const http = require('node:http');
 const path = require('node:path');
 
 const ROOT = path.resolve(__dirname, '..', '..', '..');
-const HALL = process.env.HALL_URL || 'http://127.0.0.1:4322/';
+// A desktop shell is a LOCAL seat: it never wears a tunnel. A non-loopback URL
+// (a *.example.org hostname, say) is refused, not honoured - Cloudflare has no
+// business inside an Electron window.
+function localOnly(url, fallback) {
+  try {
+    const h = new URL(url).hostname;
+    if (h === '127.0.0.1' || h === 'localhost' || h === '::1') return url;
+  } catch { /* not a URL at all: fall through */ }
+  console.warn('[ymir] refusing a non-local URL for a desktop shell: ' + url);
+  return fallback;
+}
+const HALL = localOnly(process.env.HALL_URL || 'http://127.0.0.1:4322/', 'http://127.0.0.1:4322/');
 
 // One window, one app identity: Óðrerir is its own desktop app so it never
 // stacks in the taskbar and carries its own icon.
 const APP_NAME = 'Ymir · Óðrerir';
 const APP_SLUG = 'ymir-odrerir';
 const ICON = path.join(__dirname, 'icon.png');
+// The frame's buttons are the PLATFORM LAYER's question, never this file's: every launcher asks
+// `bin/host/host-sense.sh capability window-buttons` and carries the answer in as YMIR_WINDOW_BUTTONS.
+// A tiling compositor — Hyprland, Omarchy's session — draws no title bar of its own and closes a
+// window with a key, so the window is frameless there and no _ □ × can be drawn or shown (the
+// Allfather, 2026-11-14: "on Omarchy none of the _ □ × buttons should be visible in any app").
+// Everywhere else the platform keeps its own frame. Unset (a hand launch) = the platform default.
+// The menu STAYS SET either way: its accelerators are the keyboard road in, and only the drawn bar goes.
+const WINDOW_BUTTONS = String(process.env.YMIR_WINDOW_BUTTONS ?? 'on').toLowerCase() !== 'off';
 
 app.setName(APP_SLUG);
 if (process.platform === 'linux') {
@@ -115,6 +135,8 @@ function openWindow(url, title) {
     backgroundColor: '#0e0c09',
     icon: ICON,
     title,
+    // frameless where the platform draws no title bar (see WINDOW_BUTTONS above)
+    frame: WINDOW_BUTTONS,
     autoHideMenuBar: false,
     webPreferences: {
       contextIsolation: true,
@@ -122,6 +144,11 @@ function openWindow(url, title) {
     },
   });
   win.loadURL(url);
+  // Hide the visible File/Edit/View menu bar (as Sessrúmnir does). The
+  // application menu stays set below, so its accelerators (reload, DevTools,
+  // zoom) keep working; only the bar disappears. `autoHideMenuBar` is
+  // deliberately left off so Alt does not reveal it.
+  win.setMenuBarVisibility(false);
   win.on('page-title-updated', (e) => e.preventDefault());
   win.webContents.setWindowOpenHandler(({ url: u }) => {
     shell.openExternal(u);

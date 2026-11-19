@@ -1,289 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Óðrerir — The Live Hall · Ymir</title>
-<meta name="description" content="Óðrerir — the Ymir fleet's planning glass, carved into the cloth: the tally of the hall, the armed errands dealt one slate at a time, the smiths and their states, and the carved ledger of what is underway, landed and charted. Read live, read-only — the write door stays inside the hall.">
-<meta name="author" content="Ymir">
-<meta name="robots" content="index,follow">
-<meta name="color-scheme" content="dark">
-<link rel="canonical" href="https://hall.ymir.zerwiz.org/">
-
-<!-- icons — the carved cloth: stone and bronze -->
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#c9973f">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#0e0c09">
-<meta name="msapplication-TileColor" content="#0e0c09">
-<meta name="apple-mobile-web-app-title" content="Óðrerir">
-
-<!-- Open Graph — Facebook, WhatsApp, Telegram, LinkedIn, Slack, Discord, iMessage -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Ymir — Óðrerir">
-<meta property="og:title" content="Óðrerir — The Live Hall">
-<meta property="og:description" content="The fleet's planning glass, carved into the cloth — read live, dealt by hand, never a write door.">
-<meta property="og:url" content="https://hall.ymir.zerwiz.org/">
-<meta property="og:image" content="https://hall.ymir.zerwiz.org/og.png">
-<meta property="og:image:secure_url" content="https://hall.ymir.zerwiz.org/og.png">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Óðrerir — the Live Hall, cut in stone and bronze">
-<meta property="og:locale" content="en_US">
-
-<!-- Twitter / X -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Óðrerir — The Live Hall">
-<meta name="twitter:description" content="The fleet's planning glass, carved into the cloth — read live, dealt by hand, never a write door.">
-<meta name="twitter:image" content="https://hall.ymir.zerwiz.org/og.png">
-<meta name="twitter:image:alt" content="Óðrerir — the Live Hall, cut in stone and bronze">
-
-<!-- the glass reads this same snapshot; the link says so -->
-<link rel="alternate" type="application/json" href="/livehall.json" title="the hall's own snapshot">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&family=Noto+Sans+Runic&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles/cloth.css">
-<link rel="stylesheet" href="/styles/livehall.css">
-</head>
-<body>
-
-<!-- ======= TOPBAR — the hall's own deck ======= -->
-<div class="hall-top">
-  <span><span class="rn">ᛈ</span>YMIR · ÓÐRERIR — THE LIVE HALL</span>
-  <a class="hall-back" href="https://ymirdell.zerwiz.org/" rel="noopener" title="the saga — ymirdell.zerwiz.org" aria-label="Back to the lore — the saga of Ymir">← the lore</a>
-</div>
-
-<!-- ================= ÓÐRERIR — THE LIVE HALL =================
-     The fleet's board on its own deck: the same machinery that drives the
-     /bearings board inside the hall, rebuilt in the carved cloth the landing
-     is cut from (cloth.css is extracted from the landing's :root; the kit is
-     livehall.css). Ported function-for-function: tally strip, the dealt call
-     stack with recommended marks + freeform + the 512-byte queue guard, the
-     carved ledger of underway / landed / charted thread rows, the dispatch
-     picker, stack navigation, fail-closed render.
-     HARD LINE: the public face is READ-ONLY. No visitor path writes to a hold;
-     an answer queued here is held in this page alone. The cards ask the saga's
-     own gates, and the tally is the saga's own count, told honestly.
--->
-<main class="hall-wrap" id="livehall" aria-labelledby="lh-h2">
-  <header class="shead rv">
-    <span class="snum rn" aria-hidden="true">ᛈ</span>
-    <p class="skicker"><span class="rn">ᛈ</span>óðrœrir · the mead of poetry</p>
-    <h1 id="lh-h2">The Live Hall</h1>
-    <p class="ssub">the fleet's planning glass, carved into the cloth — read live, dealt by hand, never a write door</p>
-  </header>
-
-  <div class="prose rv">
-    <p>The hall keeps its own board, and it is the same one the fleet's mornings are read from: a tally
-    of what stands, one call dealt at a time off a slate pile, and a carved ledger of what is underway,
-    what has landed, and what is charted next. Every part of that board is here — rebuilt in the stone
-    the rest of this page is cut from, with its own machinery intact.</p>
-  </div>
-  <div class="prose rv">
-    <p>What it deals are the hall's own errands — the work the fleet has armed, the smith who holds
-    each one, and the carved ledger of what is underway, what has landed and what is charted next.
-    Nothing here is a door: a word queued on this page stays in this page alone, and the hall's own
-    board is where an errand is armed or released. If no snapshot is at hand the saga's own count
-    stands in its place, and says so.</p>
-  </div>
-
-  <div class="lh-board rv">
-    <noscript><p class="lh-nojs">The hall's board is dealt by script. Without it the tally stands
-    unwritten and the slates stay in the pile — the fleet's own board is where the machinery runs.</p></noscript>
-
-    <div class="lh-tally" id="lh-tally" aria-label="The tally of the hall"></div>
-    <div class="lh-smiths" id="lh-smiths" aria-label="The smiths of the hall"></div>
-    <p class="lh-count" id="lh-count"></p>
-
-    <div class="lh-cols">
-      <section class="lh-sec" aria-label="The hall's call — one slate at a time">
-        <div class="lh-sec-head">
-          <span class="lh-eyebrow"><span class="rn">ᚲ</span>the hall's call</span>
-          <span class="lh-sub" id="lh-call-sub"></span>
-        </div>
-        <div class="lh-callwrap">
-          <div class="lh-call" id="lh-call"></div>
-          <!-- the nav sits under the pile so the dealt slate's top edge lines up
-               with the charted slate across the row -->
-          <div class="lh-stacknav">
-            <span class="lh-stacknav__count" id="lh-stack-count" aria-live="polite">-</span>
-            <button type="button" class="lh-stacknav__btn" id="lh-stack-prev" aria-label="Previous slate">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
-            </button>
-            <button type="button" class="lh-stacknav__btn" id="lh-stack-next" aria-label="Next slate">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
-            </button>
-          </div>
-        </div>
-        <p class="lh-note">a word queued here is <b>held in this page</b> — the hall's own board is where
-        a word becomes work</p>
-      </section>
-
-      <section class="lh-sec" aria-label="Charted next — the lanes waiting on a dispatch">
-        <div class="lh-sec-head">
-          <span class="lh-eyebrow"><span class="rn">ᛚ</span>charted next</span>
-          <span class="lh-sub" id="lh-charted-sub"></span>
-        </div>
-        <div class="lh-slate lh-slate--warm">
-          <div class="lh-rows" id="lh-charted"></div>
-          <div class="lh-dispatch" id="lh-dispatch" hidden>
-            <span class="lh-dispatch__count" id="lh-dispatch-count">nothing picked</span>
-            <span class="lh-queued" id="lh-dispatch-queued">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-              queued
-            </span>
-            <button type="button" class="lh-btn lh-btn--gold" id="lh-dispatch-btn">Queue the dispatch</button>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <div class="lh-cols">
-      <section class="lh-sec" aria-label="Underway — what the hall keeps running">
-        <div class="lh-sec-head">
-          <span class="lh-eyebrow"><span class="rn">ᚠ</span>underway</span>
-          <span class="lh-sub" id="lh-underway-sub">kept by the hall</span>
-        </div>
-        <div class="lh-slate"><div class="lh-rows" id="lh-underway"></div></div>
-      </section>
-
-      <section class="lh-sec" aria-label="Recently landed — the carvings that stand">
-        <div class="lh-sec-head">
-          <span class="lh-eyebrow"><span class="rn">ᛏ</span><span id="lh-landed-k">landed as carvings</span></span>
-          <span class="lh-sub" id="lh-landed-sub">the saga's thirteen</span>
-        </div>
-        <div class="lh-slate"><div class="lh-rows" id="lh-landed"></div></div>
-      </section>
-    </div>
-
-    <div class="lh-provenance">
-      <span class="lh-asof" id="lh-asof">—</span>
-      <button type="button" class="lh-btn lh-btn--sm lh-refresh" id="lh-refresh" aria-label="Read the hall again"><span class="rn">ᛚ</span>Read again</button>
-    </div>
-  </div>
-</main>
-
-<footer class="hall-foot">
-  <div class="frule" aria-hidden="true"><span>ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ ᚷ ᚹ ᚺ ᚾ ᛁ ᛇ ᛈ ᛉ ᛊ ᛏ ᛒ ᛖ ᛗ ᛚ ᛜ ᛞ ᛟ</span></div>
-  <p class="hall-foot-big">One call at a time — the board is shown, not written.</p>
-  <p class="hall-foot-close">a word queued here stays in this page<br>
-  the write door stays inside the hall</p>
-</footer>
-
-<!-- the board's payload: the saga's own gates and counts, no private names -->
-<script id="lh-saga" type="application/json">
-{
-  "schema": "ymir-livehall.v1",
-  "source": "saga",
-  "generated": "the saga, v2",
-  "smiths": ["brokk", "sindri", "bragi", "huginn", "mimir", "kvasir", "forseti", "snotra", "galdr"],
-  "houses": ["ymir labs", "brokk forge", "runestone labs", "muninn labs", "dvalin", "utgard studios", "askr", "mannheim"],
-  "captains_call": [
-    {
-      "key": "hall.forge",
-      "type": "decision",
-      "repo": "the forge",
-      "title": "What does the fleet forge next?",
-      "about": "the forge takes one order at a time — the smiths do not begin blind",
-      "decide": "which house's work the next blow falls on",
-      "recommend_value": "brokk",
-      "allow_freeform": true,
-      "freeform_hint": "or name the work in your own words…",
-      "options": [
-        { "value": "brokk", "label": "Brokk Forge", "hint": "engineering & build tooling — isolated workers drive the task to a finished artifact" },
-        { "value": "runestone", "label": "Runestone Labs", "hint": "records & compliance — the ledger and the gates; every action is inscribed" },
-        { "value": "muninn", "label": "Muninn Labs", "hint": "memory & knowledge — the well and its engine; what is observed is remembered" },
-        { "value": "utgard", "label": "Utgard Studios", "hint": "creative — shaped outside the walls, sealed and destroyed after each run" }
-      ]
-    },
-    {
-      "key": "hall.engine",
-      "type": "decision",
-      "repo": "the answer",
-      "title": "Which engine answers this task?",
-      "about": "no plan is spun from air — the answer is chosen before the work begins",
-      "decide": "where the task is answered",
-      "recommend_value": "local",
-      "allow_freeform": false,
-      "options": [
-        { "value": "local", "label": "The hand on the machine", "hint": "a keyless model runs local — the work never leaves the hall" },
-        { "value": "hosted", "label": "The far seeing", "hint": "a hosted model answers; the task crosses the bridge" },
-        { "value": "sealed", "label": "The walled realm", "hint": "the task runs sealed in Utgard and is believed only when the artifact returns" },
-        { "value": "well", "label": "The well", "hint": "the answer is drunk from memory before a single blow is struck" }
-      ]
-    },
-    {
-      "key": "hall.gate",
-      "type": "decision",
-      "repo": "the crossing",
-      "title": "Which gate does the crossing take?",
-      "about": "every crossing into Ymir passes over a gate; nothing bleeds between the halls",
-      "decide": "the road this work travels",
-      "recommend_value": "bifrost",
-      "allow_freeform": false,
-      "options": [
-        { "value": "bifrost", "label": "Bifrost", "hint": "the burning bridge — the ingress every crossing passes over" },
-        { "value": "svartalfaheim", "label": "Svartalfaheim", "hint": "the tenant halls — sandbox_isolated; nothing bleeds between halls" },
-        { "value": "utgard", "label": "Utgard", "hint": "the walled outside — docker_ephemeral, sealed and destroyed after each task" },
-        { "value": "ratatoskr", "label": "Ratatoskr", "hint": "the event stream — every word between gates, announced and carved" }
-      ]
-    },
-    {
-      "key": "hall.rune",
-      "type": "decision",
-      "repo": "the ledger",
-      "title": "What is carved into the ledger?",
-      "about": "the runes are carved once and cannot be un-carved",
-      "decide": "what the day's record will keep",
-      "recommend_value": "evidence",
-      "allow_freeform": true,
-      "freeform_hint": "or inscribe it in your own words…",
-      "options": [
-        { "value": "act", "label": "The act and its actor", "hint": "who struck, and what was struck" },
-        { "value": "reason", "label": "The reason", "hint": "why the blow fell where it did" },
-        { "value": "evidence", "label": "The evidence", "hint": "nothing passes without evidence from the well — what is spun from air is not forged" },
-        { "value": "seal", "label": "The seal", "hint": "the word of the one who approved it, kept in the human loop" }
-      ]
-    }
-  ],
-  "underway": [
-    { "state": "working", "doing": "The forge is lit", "kind": "the hearth", "repo": "tended, never relit" },
-    { "state": "working", "doing": "The watch is set", "kind": "the ward", "repo": "one who sees does not sleep" },
-    { "state": "drawn", "doing": "The nornir are at their loom", "kind": "the seating", "repo": "schedule · select · source" }
-  ],
-  "landed": [
-    { "what": "The Creation", "repo": "ᚢ · the firth", "owner": "§I" },
-    { "what": "The Builders", "repo": "ᚲ · the smiths", "owner": "§II" },
-    { "what": "The Tree & the Seven Gates", "repo": "ᛇ · the trunk", "owner": "§III" },
-    { "what": "The Well", "repo": "ᛚ · the memory", "owner": "§IV" },
-    { "what": "The Artifacts", "repo": "ᛏ · the ledger", "owner": "§V" },
-    { "what": "The Houses", "repo": "ᛟ · the seals", "owner": "§VI" },
-    { "what": "The Forge-Master's Rule", "repo": "ᚠ · the anvil", "owner": "§VII" },
-    { "what": "The Reforging", "repo": "ᛒ · the strike", "owner": "§VIII" },
-    { "what": "The Frame", "repo": "ᛞ · the laws", "owner": "§IX" },
-    { "what": "The Seating", "repo": "ᛊ · the seat", "owner": "§X" },
-    { "what": "The Watch", "repo": "ᛉ · the ward", "owner": "§XI" },
-    { "what": "The Renewal and the Healing", "repo": "ᛜ · the two hands", "owner": "§XII" },
-    { "what": "The House Endures", "repo": "ᚦ · the roots", "owner": "§XIII" }
-  ],
-  "charted": [
-    { "id": "mannheim", "title": "Mannheim — the held seat", "repo": "a name reserved, its hall unbuilt", "reason": "on the chart", "dispatchable": true },
-    { "id": "askr", "title": "Askr — human-facing flows", "repo": "onboarding and the first steps", "reason": "on the chart", "dispatchable": true },
-    { "id": "utgard", "title": "Utgard Studios — the walled creative realm", "repo": "shaped outside the walls", "reason": "on the chart", "dispatchable": true },
-    { "id": "the-cracks", "title": "The cracks found in the quiet hours", "repo": "the healer's round · §XII", "kind": "warning", "dispatchable": false }
-  ],
-  "charted_more": 5,
-  "charted_warning_more": 0
-}
-</script>
-
-<script>
 /* ÓÐRERIR — the Live Hall: the fleet's planning glass.
 
    Data: a same-origin snapshot at /livehall.json, written by the hall's own
@@ -701,6 +415,16 @@ function renderCharted(m){
     main.appendChild(el('div', 'lh-row__title', t.title));
     main.appendChild(el('div', 'lh-row__sub', t.reason ? t.reason + ' · ' + t.sub : t.sub));
     row.appendChild(main);
+    // the shelf opens when pressed: the about of the charted work, and what a
+    // dispatch of it will make.
+    main.style.cursor = 'pointer';
+    var det = el('div', 'lh-row__detail');
+    det.style.display = 'none';
+    det.appendChild(el('p', null, 'the about: ' + (t.sub || t.reason || 'the plans own the detail — read the project shelf')));
+    det.appendChild(el('p', null, 'a dispatch of this will: carve an isolated worktree, raise the agent on it, and land the deliverable at the project shelf — the aim rides the brief, and the ticket is cut in the book.'));
+    var open = false;
+    main.addEventListener('click', function(){ open = !open; det.style.display = open ? 'block' : 'none'; });
+    row.appendChild(det);
     if(isWarning(t)) row.appendChild(badge('danger', 'needs repair'));
     else if(t.reason) row.appendChild(badge('warn', 'waiting'));
     ch.appendChild(row);
@@ -776,6 +500,19 @@ $('#lh-dispatch-btn').addEventListener('click', function(){
    PAINT, THEN READ THE HALL
    ============================================================ */
 render(modelFromSaga(saga));
+/* The hall says so when it is telling the tale rather than reading a board:
+   invented rows must never pass for telemetry. Removed when a live feed arrives. */
+try {
+  if (!document.getElementById('saga-note')) {
+    var note = document.createElement('div');
+    note.id = 'saga-note';
+    note.setAttribute('role', 'status');
+    note.style.cssText = 'margin:12px 0;padding:10px 14px;border:1px solid rgba(201,151,63,0.45);border-radius:8px;font-size:0.9rem;line-height:1.45;opacity:0.9';
+    note.textContent = 'Not connected \u2014 this board is the saga\u2019s sample, not your fleet. It reads live once the hall reaches its source.';
+    var host = document.querySelector('.lh-board') || document.body;
+    host.insertBefore(note, host.firstChild);
+  }
+} catch (e) { /* a courtesy; never break the page for it */ }
 
 var lastFeed = null;
 function readSnapshot(force){
@@ -788,6 +525,8 @@ function readSnapshot(force){
         if(!force && raw === lastFeed) return;            /* nothing new to paint */
         lastFeed = raw;
         render(modelFromFeed(feed));
+        var sn = document.getElementById('saga-note');
+        if (sn) sn.remove();   /* live board: the sample marker has no business here */
       })
       .catch(function(){ /* the tale stands */ });
   } catch (e) { /* no fetch available — the tale stands */ }
@@ -808,22 +547,3 @@ document.addEventListener('visibilitychange', function(){
 });
 readSnapshot(false);
 })();
-</script>
-
-<script>
-/* the Hall's reveal — the landing's own rhythm, kept local to this deck */
-(function(){
-'use strict';
-document.documentElement.classList.add('js');
-if(matchMedia('(prefers-reduced-motion: reduce)').matches){
-  document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); });
-  return;
-}
-var io = new IntersectionObserver(function(es){
-  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-}, { threshold: 0.18, rootMargin: '0px 0px -10% 0px' });
-document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
-})();
-</script>
-</body>
-</html>

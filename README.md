@@ -1,31 +1,21 @@
 # Óðrerir — the Live Hall
 
-The Ymir fleet's planning glass, on its own deck. A static Astro site
-(alpine-cold: a carved `src/index.html` served verbatim) that paints the
-fleet's live planning snapshot — one page, one candle, no wandering halls.
+> The mead of poetry: what the fleet speaks, distilled.
 
-Part of the [Ymir](https://github.com/zerwiz/ymir) project. Norse name for the
-mead of poetry: the lore is stored in the cauldron, and here it is served.
+The board on `:4322` — the fleet's live glass: runs, tokens, chains, and the
+council, poured over the hall's cloth (stone, bone, bronze and blood).
 
-## What it is
-
-- **The Live Hall board** — the fleet's planning snapshot as a single glass:
-  agents, tasks, and the road ahead, read from `livehall.json`
-  (written by the Ymir tree's `bin/hall-snapshot.sh` into this repo's
-  `public/`; absent, the page paints the saga's own tale and says so).
-- **Own origin, own port** — serves on `:4322` (the landing keeps `:4321`).
-- **Cloth** — `src/styles/cloth.css` (tokens extracted from the landing's
-  `:root`) and `src/styles/livehall.css` (the board kit).
-
-## Run
+## Install
 
 ```bash
-npm install
-npm run dev        # astro dev, :4322
-npm run build      # static build to dist/
-npm run preview
+npm install -g @zerwiz/ymir
+ymir raise            # the Live Hall answers at :4322
 ```
 
-## Licence
+- Home: <https://github.com/zerwiz/odrerir>
+- The Lore: <https://your-ymir-host.example.org/>
+- Licence: Apache-2.0 (LICENSE, NOTICE)
 
-Apache License, Version 2.0 — see `LICENSE` and `NOTICE`.
+## CHANGE LOG
+
+- **2026-11-12** — this document gained a CHANGE LOG section so it carries its history (RULES/06). Its earlier history is its git log; entries are appended below, never rewritten.
